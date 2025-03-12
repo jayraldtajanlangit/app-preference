@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Application Settings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-toggle [(ngModel)]="option1" (ionChange)="saveSettings()">Option 1</ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-toggle [(ngModel)]="option2" (ionChange)="saveSettings()">Option 2</ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-toggle [(ngModel)]="option3" (ionChange)="saveSettings()">Option 3</ion-toggle>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>{{ rangeValue }}</ion-label> <!-- Display the value as a label -->
+      <ion-range [(ngModel)]="rangeValue" [pin]="true" (ionChange)="saveSettings()"></ion-range>
+    </ion-item>
+    
+
+    <ion-item>
+      <ion-checkbox [(ngModel)]="checkbox1" (ionChange)="saveSettings()" label-placement="end">
+        Checkbox 1
+      </ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="checkbox2" (ionChange)="saveSettings()" labelPlacement="end">
+        Checkbox 2
+      </ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="checkbox3" (ionChange)="saveSettings()" labelPlacement="end">
+        Checkbox 3
+      </ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-radio-group [(ngModel)]="radioValue" (ionChange)="saveSettings()">
+        <ion-radio value="true" labelPlacement="end">Radio 1</ion-radio>
+        <ion-radio value="false" labelPlacement="end">Radio 2</ion-radio>
+      </ion-radio-group>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" color="medium" (click)="resetSettings()">Reset Settings</ion-button>
+</ion-content>
